@@ -14,8 +14,14 @@
                             <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
 
                             <div class="col-md-6">
-                                <input value="admin@gmail.com" id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                {{-- <input value="admin@gmail.com" id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus> --}}
 
+                                <select name="email" class="form-select" aria-label="Default select example">
+                                    @foreach($users as $user)
+                                        <option value="{{ $user->email }}">{{ $user->email }}</option>
+                                    @endforeach
+                                </select>
+                                
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>

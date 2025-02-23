@@ -91,15 +91,15 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    <div>First time Register & Login</div> <br>
+                    <div>Register & Login</div> <br>
                     @if (Route::has('login'))
                         @auth
                             <a href="{{ url('/home') }}">Home</a>
                         @else
-                            <a href="{{ route('login') }}">Login</a>    
                             @if (Route::has('register'))
                                 <a href="{{ route('register') }}">Register</a>
                             @endif
+                            <a href="{{ route('login') }}">Login</a>    
                         @endauth
                     @endif
                 </div>                

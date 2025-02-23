@@ -7,8 +7,8 @@
     </head>
     <body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
         <div class="app-wrapper">
-            @include('layouts.header')
-            @include('layouts.sidebar')
+            @include('layouts.header')            
+            @include(Auth::user()->role . '.sidebar')
 
             <main class="app-main">
                 <div class="app-content">
